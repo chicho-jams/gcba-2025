@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gcba-2025"
-run/main_scene="uid://bpuqn3xn58i6r"
+run/main_scene="uid://bjk8nqssohs52"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bly1b1lfudhbc"
-path="res://.godot/imported/Cyberpunk_City_Atlas.png-c5fa9cfa49626bb25edc6da49cfcfdf1.ctex"
+path="res://.godot/imported/Cyberpunk_City_Atlas.png-e1dfa756cfd44d6b398a88af6db161b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheets/Cyberpunk_City_Atlas.png"
-dest_files=["res://.godot/imported/Cyberpunk_City_Atlas.png-c5fa9cfa49626bb25edc6da49cfcfdf1.ctex"]
+source_file="res://assets/tiles/foregrounds/Cyberpunk_City_Atlas.png"
+dest_files=["res://.godot/imported/Cyberpunk_City_Atlas.png-e1dfa756cfd44d6b398a88af6db161b8.ctex"]
 
 [params]
 
