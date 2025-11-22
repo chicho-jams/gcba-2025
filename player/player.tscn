@@ -1,13 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://qbskbd3r14k5"]
 
 [ext_resource type="Script" uid="uid://dh410sa5nmolc" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://b8t1a7nevodtn" path="res://assets/characters/Character 01 Sheet 64x64.png" id="2_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://dwqce76fob1tk" path="res://assets/characters/robot/player.png" id="2_rkbax"]
 
-[sub_resource type="Animation" id="Animation_yw30f"]
-resource_name = "up"
-length = 1.40001
-loop_mode = 1
-step = 0.16666667
+[sub_resource type="Animation" id="Animation_rgyib"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,10 +12,10 @@ tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [7, 11, 15, 19]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_qjkh3"]
@@ -75,8 +72,11 @@ tracks/0/keys = {
 "values": [2, 6, 10, 14]
 }
 
-[sub_resource type="Animation" id="Animation_rgyib"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_yw30f"]
+resource_name = "up"
+length = 1.40001
+loop_mode = 1
+step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,10 +84,10 @@ tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4]
+"values": [7, 11, 15, 19]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hg6s5"]
@@ -149,7 +149,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wodsf")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_g1dw6")
+texture = ExtResource("2_rkbax")
 hframes = 4
 vframes = 6
 frame = 4
