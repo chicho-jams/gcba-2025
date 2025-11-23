@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://bpuqn3xn58i6r"]
 
 [ext_resource type="PackedScene" uid="uid://qbskbd3r14k5" path="res://player/player.tscn" id="1_u52ul"]
-[ext_resource type="Texture2D" uid="uid://bly1b1lfudhbc" path="res://assets/tiles/foregrounds/Cyberpunk_City_Atlas.png" id="1_vonw3"]
+[ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_vonw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oi3di"]
 texture = ExtResource("1_vonw3")
