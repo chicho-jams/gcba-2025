@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmrarp7w18mw0"]
+
+[ext_resource type="Script" uid="uid://c7yr37m5uh517" path="res://interactables/ui/interactable_ui.gd" id="1_y061j"]
+[ext_resource type="Shader" uid="uid://dwr6os1g3k6gu" path="res://interactables/ui/hold_progress.gdshader" id="2_qc8yt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y061j"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc8yt"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sebj"]
+shader = ExtResource("2_qc8yt")
+shader_parameter/progress = 0.5
+shader_parameter/start_angle = 90.0
+shader_parameter/clockwise = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev5ys"]
+bg_color = Color(1, 0.968627, 0.372549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[node name="InteractableUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_y061j")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 494
+theme_override_constants/margin_bottom = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="InteractionKey" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_y061j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qc8yt")
+toggle_mode = true
+
+[node name="HoldProgress" type="Panel" parent="MarginContainer/HBoxContainer/InteractionKey"]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_8sebj")
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0625
+anchor_top = -0.0625
+anchor_right = 1.0625
+anchor_bottom = 1.0625
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ev5ys")
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractionLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
