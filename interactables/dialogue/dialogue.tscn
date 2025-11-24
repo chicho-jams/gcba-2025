@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c41g4xatp22h"]
+
+[ext_resource type="Script" uid="uid://c6i51msywl155" path="res://interactables/dialogue/dialogue.gd" id="1_wgt8b"]
+
+[node name="Dialogue" type="Node2D"]
+script = ExtResource("1_wgt8b")
+
+[node name="TypeBlip" type="AudioStreamPlayer" parent="."]

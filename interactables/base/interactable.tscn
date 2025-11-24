@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdiwr3k775v7"]
+
+[ext_resource type="Script" uid="uid://87bhlpepwfsw" path="res://interactables/base/interactable.gd" id="1_prs1f"]
+
+[node name="Interactable" type="Node2D"]
+script = ExtResource("1_prs1f")
+press_action = &"ui_select"
+
+[node name="FocusArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FocusArea"]
+
+[node name="PlayerArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+debug_color = Color(0.59901494, 0.54395247, 0, 0.42)
+
+[node name="CooldownTimeout" type="Timer" parent="."]
+wait_time = 0.24
+
+[node name="HoldTimeout" type="Timer" parent="."]

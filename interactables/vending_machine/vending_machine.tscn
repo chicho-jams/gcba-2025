@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://v17qace638xj"]
+
+[ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_mhcxl"]
+[ext_resource type="PackedScene" uid="uid://bjdiwr3k775v7" path="res://interactables/base/interactable.tscn" id="2_34m8l"]
+[ext_resource type="PackedScene" uid="uid://c41g4xatp22h" path="res://interactables/dialogue/dialogue.tscn" id="3_ve5ur"]
+[ext_resource type="Resource" uid="uid://cbsuum7vjrfk5" path="res://interactables/vending_machine/vending_machine.dialogue" id="4_ve5ur"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34m8l"]
+radius = 7.0
+height = 46.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6hoe"]
+radius = 22.022715
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ve5ur"]
+radius = 8.0
+height = 58.0
+
+[node name="VendingMachine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+texture = ExtResource("1_mhcxl")
+region_enabled = true
+region_rect = Rect2(569, 688, 46, 57)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_34m8l")
+debug_color = Color(0.9626047, 9.62615e-08, 0.5064098, 0.41960785)
+
+[node name="Interactable" parent="." instance=ExtResource("2_34m8l")]
+
+[node name="CollisionShape2D" parent="Interactable/FocusArea" index="0"]
+position = Vector2(0, -22)
+shape = SubResource("CircleShape2D_y6hoe")
+
+[node name="CollisionShape2D" parent="Interactable/PlayerArea" index="0"]
+position = Vector2(0, 8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ve5ur")
+
+[node name="Dialogue" parent="Interactable" instance=ExtResource("3_ve5ur")]
+dialogue = ExtResource("4_ve5ur")
+dialogue_id = "start"
+
+[editable path="Interactable"]

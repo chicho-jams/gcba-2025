@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cbsuum7vjrfk5"
+path="res://.godot/imported/vending_machine.dialogue-020fab933fd5779e71822a8e1a1d146b.tres"
+
+[deps]
+
+source_file="res://interactables/vending_machine/vending_machine.dialogue"
+dest_files=["res://.godot/imported/vending_machine.dialogue-020fab933fd5779e71822a8e1a1d146b.tres"]
+
+[params]
+
+defaults=true

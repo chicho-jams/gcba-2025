@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bjk8nqssohs52"]
+[gd_scene load_steps=6 format=4 uid="uid://bjk8nqssohs52"]
 
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://qbskbd3r14k5" path="res://player/player.tscn" id="2_bovvr"]
+[ext_resource type="PackedScene" uid="uid://v17qace638xj" path="res://interactables/vending_machine/vending_machine.tscn" id="3_b2cq8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bovvr"]
 texture = ExtResource("1_377w7")
@@ -1258,6 +1259,8 @@ texture = ExtResource("1_377w7")
 sources/0 = SubResource("TileSetAtlasSource_bovvr")
 
 [node name="Level" type="Node2D"]
+z_index = 3
+y_sort_enabled = true
 
 [node name="Tilemap" type="Node2D" parent="."]
 
@@ -1276,3 +1279,6 @@ anchor_mode = 0
 position = Vector2(160, 312)
 
 [node name="StartPosition" type="Marker2D" parent="."]
+
+[node name="VendingMachine" parent="." instance=ExtResource("3_b2cq8")]
+position = Vector2(289, 281)
