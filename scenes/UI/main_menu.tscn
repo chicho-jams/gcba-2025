@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmh3qg73asrcu"]
+[gd_scene load_steps=14 format=3 uid="uid://bmh3qg73asrcu"]
 
 [ext_resource type="Script" uid="uid://ck6e6v2y2kygn" path="res://scenes/UI/main_menu.gd" id="1_qwnig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwnig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yonvy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jstl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfcbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2p27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngj32"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bm8t2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5d4ag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_um6dh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf7fl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6l81"]
+
+[sub_resource type="Theme" id="Theme_a1wsg"]
+default_font_size = 24
+Button/colors/font_focus_color = Color(0.2509804, 0.38431373, 0.5921569, 1)
+Button/colors/font_hover_color = Color(0.72156864, 0.83137256, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0.20784314, 0.26666668, 0.38039216, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_qwnig")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_yonvy")
+Button/styles/focus = SubResource("StyleBoxEmpty_5jstl")
+Button/styles/hover = SubResource("StyleBoxEmpty_tfcbk")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_e2p27")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_ngj32")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_bm8t2")
+Button/styles/normal = SubResource("StyleBoxEmpty_5d4ag")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_um6dh")
+Button/styles/pressed = SubResource("StyleBoxEmpty_mf7fl")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_d6l81")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_a1wsg")
 script = ExtResource("1_qwnig")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -45,6 +85,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 10
 
@@ -78,4 +119,6 @@ focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../OptionsButton")
 text = "Salir"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVBox/QuitButton" to="." method="_on_quit_button_pressed"]
