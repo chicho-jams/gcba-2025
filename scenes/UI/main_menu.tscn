@@ -1,6 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmh3qg73asrcu"]
+[gd_scene load_steps=17 format=3 uid="uid://bmh3qg73asrcu"]
 
+[ext_resource type="FontFile" uid="uid://csfknem0amrp0" path="res://assets/fonts/Orbitron-Regular.ttf" id="1_1g8jr"]
 [ext_resource type="Script" uid="uid://ck6e6v2y2kygn" path="res://scenes/ui/main_menu.gd" id="1_qwnig"]
+[ext_resource type="Texture2D" uid="uid://k3w0t08evjla" path="res://scenes/ui/Background.jpg" id="2_fe2o3"]
+[ext_resource type="FontFile" uid="uid://baxa2knxh10je" path="res://assets/fonts/Orbitron-Bold.ttf" id="4_m1kxf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwnig"]
 
@@ -26,9 +29,11 @@
 
 [sub_resource type="Theme" id="Theme_a1wsg"]
 default_font_size = 24
-Button/colors/font_focus_color = Color(0.2509804, 0.38431373, 0.5921569, 1)
-Button/colors/font_hover_color = Color(0.72156864, 0.83137256, 1, 1)
-Button/colors/font_hover_pressed_color = Color(0.20784314, 0.26666668, 0.38039216, 1)
+Button/colors/font_color = Color(0.069695495, 0.15017954, 0.09967273, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.9764706, 0.64705884, 0.5019608, 1)
+Button/colors/font_hover_pressed_color = Color(0.4321207, 0.42473504, 0.7286791, 1)
+Button/fonts/font = ExtResource("1_1g8jr")
 Button/styles/disabled = SubResource("StyleBoxEmpty_qwnig")
 Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_yonvy")
 Button/styles/focus = SubResource("StyleBoxEmpty_5jstl")
@@ -51,7 +56,19 @@ grow_vertical = 2
 theme = SubResource("Theme_a1wsg")
 script = ExtResource("1_qwnig")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fe2o3")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,6 +96,7 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_m1kxf")
 theme_override_font_sizes/font_size = 32
 text = "Buenos Aires 2050"
 horizontal_alignment = 1
@@ -87,6 +105,7 @@ vertical_alignment = 1
 [node name="ButtonVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 10
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonVBox"]

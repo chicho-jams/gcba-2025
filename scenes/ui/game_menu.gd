@@ -5,7 +5,7 @@ signal _main_menu()
 
 @onready var master_bus_id: int = AudioServer.get_bus_index("Master")
 @onready var sfx_bus_id: int = AudioServer.get_bus_index("SFX")
-@onready var music_bus_id: int = AudioServer.get_bus_index("Music")
+@onready var music_bus_id: int = AudioServer.get_bus_index("BGM")
 
 @onready var buttons_v_box: VBoxContainer = %ButtonsVBox
 
@@ -24,8 +24,8 @@ func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_mute(sfx_bus_id, value < 0.05)
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(music_bus_id, linear_to_db(value))
-	AudioServer.set_bus_mute(music_bus_id, value < 0.05)
+	AudioServer.set_bus_volume_db(sfx_bus_id, linear_to_db(value))
+	AudioServer.set_bus_mute(sfx_bus_id, value < 0.05)
 
 func _on_visibility_changed() -> void:
 	if visible:

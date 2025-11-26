@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://drw5lx83cps2u"]
+[gd_scene load_steps=16 format=3 uid="uid://drw5lx83cps2u"]
 
 [ext_resource type="Script" uid="uid://bgpft1a6p580d" path="res://scenes/ui/game_menu.gd" id="1_5s0hc"]
+[ext_resource type="FontFile" uid="uid://baxa2knxh10je" path="res://assets/fonts/Orbitron-Bold.ttf" id="1_6jy2e"]
+[ext_resource type="Texture2D" uid="uid://k3w0t08evjla" path="res://scenes/ui/Background.jpg" id="2_tup5k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwnig"]
 
@@ -29,6 +31,7 @@ default_font_size = 24
 Button/colors/font_focus_color = Color(0.2509804, 0.38431373, 0.5921569, 1)
 Button/colors/font_hover_color = Color(0.72156864, 0.83137256, 1, 1)
 Button/colors/font_hover_pressed_color = Color(0.20784314, 0.26666668, 0.38039216, 1)
+Button/fonts/font = ExtResource("1_6jy2e")
 Button/styles/disabled = SubResource("StyleBoxEmpty_qwnig")
 Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_yonvy")
 Button/styles/focus = SubResource("StyleBoxEmpty_5jstl")
@@ -50,6 +53,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_a1wsg")
 script = ExtResource("1_5s0hc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tup5k")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -102,7 +116,9 @@ focus_neighbor_top = NodePath("../../ReturnToGameButton")
 focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
 focus_previous = NodePath("../../ReturnToGameButton")
-step = 0.5
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/ButtonsVBox/GridContainer"]
 layout_mode = 2
@@ -116,7 +132,9 @@ focus_neighbor_top = NodePath("../MasterSlider")
 focus_neighbor_bottom = NodePath("../SFXSlider")
 focus_next = NodePath("../SFXSlider")
 focus_previous = NodePath("../MasterSlider")
-step = 0.5
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="SFXLabel" type="Label" parent="MarginContainer/ButtonsVBox/GridContainer"]
 layout_mode = 2
@@ -130,7 +148,9 @@ focus_neighbor_top = NodePath("../MusicSlider")
 focus_neighbor_bottom = NodePath("../../MainMenu")
 focus_next = NodePath("../../MainMenu")
 focus_previous = NodePath("../MusicSlider")
-step = 0.5
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="MainMenu" type="Button" parent="MarginContainer/ButtonsVBox"]
 layout_mode = 2
