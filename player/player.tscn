@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://dh410sa5nmolc" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dwqce76fob1tk" path="res://assets/characters/robot/player.png" id="2_rkbax"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wodsf"]
+radius = 6.0
+height = 32.0
+
 [sub_resource type="Animation" id="Animation_rgyib"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/Sprite2D:position")
+tracks/1/path = NodePath("Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -32,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D/CollisionShape2D:position")
+tracks/2/path = NodePath("CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -50,7 +54,7 @@ step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -62,7 +66,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/CollisionShape2D:position")
+tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -74,7 +78,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D/Sprite2D:position")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -92,7 +96,7 @@ step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -104,7 +108,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/CollisionShape2D:position")
+tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -116,7 +120,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D/Sprite2D:position")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -134,7 +138,7 @@ step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -146,7 +150,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/CollisionShape2D:position")
+tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -158,7 +162,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D/Sprite2D:position")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -176,7 +180,7 @@ step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -188,7 +192,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterBody2D/CollisionShape2D:position")
+tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -200,7 +204,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D/Sprite2D:position")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -243,14 +247,24 @@ blend_point_3/pos = Vector2(1, 0)
 snap = Vector2(1, 1)
 sync = true
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wodsf"]
-radius = 6.0
-height = 24.0
-
-[node name="Player" type="Node2D" groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_rkbax")
 SPEED = 100.0
-RAYCAST_SCALE = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wodsf")
+debug_color = Color(0.97594875, 0, 0.41912484, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("2_rkbax")
+hframes = 4
+vframes = 6
+frame = 4
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 4
@@ -264,24 +278,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeBlendSpace2D_kb6p2")
 anim_player = NodePath("../AnimationPlayer")
-parameters/blend_position = Vector2(3.655, 0)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_layer = 16
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(1, 0)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_wodsf")
-debug_color = Color(0.97594875, 0, 0.41912484, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, -28)
-texture = ExtResource("2_rkbax")
-hframes = 4
-vframes = 6
-frame = 4
+parameters/blend_position = Vector2(0, 0)

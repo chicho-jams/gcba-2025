@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 
 @export var SPEED = 300.0
@@ -17,16 +17,16 @@ func _physics_process(_delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
-		$CharacterBody2D.velocity = direction * SPEED
+		velocity = direction * SPEED
 	else:
-		$CharacterBody2D.velocity = $CharacterBody2D.velocity.move_toward(Vector2.ZERO, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 
-	$CharacterBody2D.move_and_slide()
+	move_and_slide()
 
 	# align raycast
-	if $CharacterBody2D.velocity.length() > 0.1:
-		$RayCast2D.global_position = $CharacterBody2D.global_position
-		$RayCast2D.target_position = $CharacterBody2D.velocity * RAYCAST_SCALE
+	if velocity.length() > 0.1:
+		$RayCast2D.global_position = global_position
+		$RayCast2D.target_position = velocity * RAYCAST_SCALE
 
 	if $RayCast2D.is_colliding():
 		var collider : Object = $RayCast2D.get_collider().get_parent()
@@ -37,8 +37,8 @@ func _physics_process(_delta: float) -> void:
 	else:
 		update_focus(null)
 
-	$AnimationTree.set("parameters/blend_position", $CharacterBody2D.velocity)
-	$AnimationTree.active = not $CharacterBody2D.velocity.is_equal_approx(Vector2.ZERO)
+	$AnimationTree.set("parameters/blend_position", velocity)
+	$AnimationTree.active = not velocity.is_equal_approx(Vector2.ZERO)
 
 
 func update_focus(new_focus):
