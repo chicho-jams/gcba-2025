@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_mhcxl"]
 [ext_resource type="PackedScene" uid="uid://bjdiwr3k775v7" path="res://interactables/base/interactable.tscn" id="2_34m8l"]
 [ext_resource type="PackedScene" uid="uid://c41g4xatp22h" path="res://interactables/dialogue/dialogue.tscn" id="3_ve5ur"]
-[ext_resource type="Resource" uid="uid://cbsuum7vjrfk5" path="res://interactables/vending_machine/vending_machine.dialogue" id="4_ve5ur"]
+[ext_resource type="Resource" uid="uid://bih5eaxln05" path="res://interactables/dialogue/water_dispenser.dialogue" id="4_1wc6o"]
 [ext_resource type="PackedScene" uid="uid://dmrarp7w18mw0" path="res://interactables/ui/interactable_ui.tscn" id="5_1wc6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34m8l"]
@@ -44,7 +44,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ve5ur")
 
 [node name="Dialogue" parent="Interactable" instance=ExtResource("3_ve5ur")]
-dialogue = ExtResource("4_ve5ur")
+dialogue = ExtResource("4_1wc6o")
 dialogue_id = "start"
 
 [node name="InteractableUI" parent="Interactable" instance=ExtResource("5_1wc6o")]
