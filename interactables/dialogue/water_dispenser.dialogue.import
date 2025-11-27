@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bih5eaxln05"
+path="res://.godot/imported/water_dispenser.dialogue-9782bc57a8418d280fc570ea3646a1c3.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/water_dispenser.dialogue"
+dest_files=["res://.godot/imported/water_dispenser.dialogue-9782bc57a8418d280fc570ea3646a1c3.tres"]
+
+[params]
+
+defaults=true

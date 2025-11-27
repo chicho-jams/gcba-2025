@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://5dei8e2whgd"
+path="res://.godot/imported/shoeshiner.dialogue-377a624a58a569cb8d4052dcd9939648.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/shoeshiner.dialogue"
+dest_files=["res://.godot/imported/shoeshiner.dialogue-377a624a58a569cb8d4052dcd9939648.tres"]
+
+[params]
+
+defaults=true

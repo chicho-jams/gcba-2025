@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://7v2pv4sdd0n6"
+path="res://.godot/imported/rotisserie.dialogue-434223de407caf4efa8aaf9eaedf0ea3.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/rotisserie.dialogue"
+dest_files=["res://.godot/imported/rotisserie.dialogue-434223de407caf4efa8aaf9eaedf0ea3.tres"]
+
+[params]
+
+defaults=true

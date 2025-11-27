@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c1uckjiuc5d5m"
+path="res://.godot/imported/grill_master.dialogue-8e3c8da43a39ce448004ff7834a393de.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/grill_master.dialogue"
+dest_files=["res://.godot/imported/grill_master.dialogue-8e3c8da43a39ce448004ff7834a393de.tres"]
+
+[params]
+
+defaults=true

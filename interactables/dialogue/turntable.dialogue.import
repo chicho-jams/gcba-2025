@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cclchxaot2s7v"
+path="res://.godot/imported/turntable.dialogue-4f13d35667feca5584fa92e355c8cf27.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/turntable.dialogue"
+dest_files=["res://.godot/imported/turntable.dialogue-4f13d35667feca5584fa92e355c8cf27.tres"]
+
+[params]
+
+defaults=true

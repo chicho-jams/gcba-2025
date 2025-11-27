@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://daepn7qls8dyl"
+path="res://.godot/imported/grandpa.dialogue-5cf952c1194ef1f581be85806dae9175.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/grandpa.dialogue"
+dest_files=["res://.godot/imported/grandpa.dialogue-5cf952c1194ef1f581be85806dae9175.tres"]
+
+[params]
+
+defaults=true
