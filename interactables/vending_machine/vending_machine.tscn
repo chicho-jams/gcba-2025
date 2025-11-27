@@ -23,12 +23,11 @@ height = 58.0
 position = Vector2(0, -23)
 texture = ExtResource("1_mhcxl")
 region_enabled = true
-region_rect = Rect2(569, 688, 46, 57)
+region_rect = Rect2(629, 691, 40, 59)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_34m8l")
 debug_color = Color(0.9626047, 9.62615e-08, 0.5064098, 0.41960785)
