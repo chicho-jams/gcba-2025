@@ -1,5 +1,5 @@
 class_name InteractableUI
-extends Control
+extends CanvasLayer
 
 var _interactable_zone : InteractableZone
 var _current_device : String
