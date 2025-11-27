@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://qp0xcfdmq5o8"]
+[gd_scene load_steps=7 format=3 uid="uid://qp0xcfdmq5o8"]
 
 [ext_resource type="Texture2D" uid="uid://c8clx5cgxsju8" path="res://assets/sprites/mate.png" id="1_n86so"]
+[ext_resource type="Script" uid="uid://dojkwevtx5qlp" path="res://interactables/item.gd" id="1_w0rwq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n86so"]
 radius = 69.99999
@@ -45,6 +46,7 @@ _data = {
 
 [node name="Mate" type="Area2D"]
 scale = Vector2(0.2, 0.2)
+script = ExtResource("1_w0rwq")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -59,3 +61,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_o4il5")
 }
 autoplay = "new_animation"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
