@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://qbskbd3r14k5"]
+[gd_scene load_steps=29 format=3 uid="uid://qbskbd3r14k5"]
 
 [ext_resource type="Script" uid="uid://dh410sa5nmolc" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dwqce76fob1tk" path="res://assets/characters/robot/player.png" id="2_rkbax"]
@@ -459,6 +459,10 @@ states/Moving/node = SubResource("AnimationNodeBlendSpace2D_32hag")
 states/Moving/position = Vector2(374.61224, 215.7143)
 transitions = ["Idle", "Moving", SubResource("AnimationNodeStateMachineTransition_e7oew"), "Moving", "Idle", SubResource("AnimationNodeStateMachineTransition_c35mf"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rkbax")]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
+radius = 15.0
+height = 62.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 16
 collision_mask = 3
@@ -496,3 +500,12 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Moving/blend_position = Vector2(0, 0)
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, -27)
+shape = SubResource("CapsuleShape2D_rkbax")
+debug_color = Color(0, 0.64009196, 0.35971543, 0.41960785)
