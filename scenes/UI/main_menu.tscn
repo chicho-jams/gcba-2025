@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmh3qg73asrcu"]
+[gd_scene load_steps=21 format=3 uid="uid://bmh3qg73asrcu"]
 
 [ext_resource type="FontFile" uid="uid://csfknem0amrp0" path="res://assets/fonts/Orbitron-Regular.ttf" id="1_1g8jr"]
 [ext_resource type="Script" uid="uid://ck6e6v2y2kygn" path="res://scenes/ui/main_menu.gd" id="1_qwnig"]
-[ext_resource type="Texture2D" uid="uid://k3w0t08evjla" path="res://scenes/ui/Background.jpg" id="2_fe2o3"]
-[ext_resource type="FontFile" uid="uid://baxa2knxh10je" path="res://assets/fonts/Orbitron-Bold.ttf" id="4_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://c2x1e4pvdpjo" path="res://scenes/ui/main_menu_argy.png" id="3_uhagc"]
+[ext_resource type="Texture2D" uid="uid://ddmoe3m0f1aoe" path="res://assets/sprites/ARGY_titule_s.png" id="4_btxxm"]
+[ext_resource type="AudioStream" uid="uid://b1211744d1ux4" path="res://bgm/main_menu.mp3" id="5_x2yvf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwnig"]
 
@@ -46,6 +47,45 @@ Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_um6dh")
 Button/styles/pressed = SubResource("StyleBoxEmpty_mf7fl")
 Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_d6l81")
 
+[sub_resource type="Animation" id="Animation_x2yvf"]
+resource_name = "fade_in"
+length = 4.0
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Argy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.012617188, 0.012617188, 0.012617188, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uhagc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Argy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.012617188, 0.012617188, 0.012617188, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btxxm"]
+_data = {
+&"RESET": SubResource("Animation_uhagc"),
+&"fade_in": SubResource("Animation_x2yvf")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -56,16 +96,45 @@ grow_vertical = 2
 theme = SubResource("Theme_a1wsg")
 script = ExtResource("1_qwnig")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_fe2o3")
+texture = ExtResource("3_uhagc")
+expand_mode = 1
+
+[node name="Argy" type="TextureRect" parent="."]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_top = 32.0
+offset_bottom = -448.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_btxxm")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1.9778347, 1.9400532, 1.9551659, 0.4627451)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -160.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -82,15 +151,6 @@ theme_override_constants/margin_bottom = 32
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("4_m1kxf")
-theme_override_font_sizes/font_size = 32
-text = "Argy"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ButtonVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -127,6 +187,17 @@ focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../OptionsButton")
 text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_x2yvf")
+autoplay = true
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_btxxm")
+}
+autoplay = "fade_in"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
