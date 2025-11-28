@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 InputHelper="*res://addons/input_helper/input_helper.gd"
+GameManager="*res://scenes/levels/game_manager.gd"
 
 [display]
 
