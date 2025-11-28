@@ -82,6 +82,7 @@ func interact_with_dialogue(state: String):
 					dialogue,
 					key,
 					[
+						self,
 						prepare_context(context),
 						{
 							"player": player,

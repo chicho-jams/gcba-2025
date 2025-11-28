@@ -1317,6 +1317,11 @@ editor_draw_drag_margin = true
 [node name="VendingMachine" parent="." instance=ExtResource("3_b2cq8")]
 position = Vector2(289, 281)
 
+[node name="Dialogue" parent="VendingMachine/Interactable" index="4"]
+context = {
+"termo": NodePath("../../../Termo")
+}
+
 [node name="Graffittis" type="Node2D" parent="."]
 position = Vector2(0, -1)
 
@@ -1421,3 +1426,6 @@ _item_sprite = ExtResource("8_ouxo3")
 _name_item = "mate"
 
 [node name="Empanadas" type="Node2D" parent="Collects"]
+
+[editable path="VendingMachine"]
+[editable path="VendingMachine/Interactable"]
