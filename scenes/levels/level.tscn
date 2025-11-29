@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bjk8nqssohs52"]
+[gd_scene load_steps=24 format=4 uid="uid://bjk8nqssohs52"]
 
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://qbskbd3r14k5" path="res://player/player.tscn" id="2_bovvr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b10hy2s6agmjn" path="res://scenes/ui/Background.jpg" id="10_rmjfq"]
 [ext_resource type="AudioStream" uid="uid://jkk4qgmyrxoy" path="res://scenes/levels/sfx/busy city intersection.wav" id="11_7pb6i"]
 [ext_resource type="AudioStream" uid="uid://di33ap4j1wq0c" path="res://scenes/levels/sfx/8 Bit jingle (27).ogg" id="11_xfk5q"]
+[ext_resource type="AudioStream" uid="uid://c6adgwe8aljm1" path="res://scenes/levels/sfx/argy nivel full 1 mp3.mp3" id="12_xfk5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bovvr"]
 texture = ExtResource("1_377w7")
@@ -1785,6 +1786,11 @@ bus = &"SFX"
 
 [node name="MatesEncontrados" type="AudioStreamPlayer" parent="." groups=["mates_fanfare"]]
 stream = ExtResource("11_xfk5q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xfk5q")
+autoplay = true
+bus = &"BGM"
 
 [editable path="VendingMachine"]
 [editable path="VendingMachine/Interactable"]

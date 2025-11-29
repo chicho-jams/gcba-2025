@@ -272,6 +272,8 @@ focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../QuitButton")
 shortcut = SubResource("Shortcut_btxxm")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Empezar"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonVBox"]
