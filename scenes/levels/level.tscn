@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bjk8nqssohs52"]
+[gd_scene load_steps=31 format=4 uid="uid://bjk8nqssohs52"]
 
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://qbskbd3r14k5" path="res://player/player.tscn" id="2_bovvr"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://di33ap4j1wq0c" path="res://scenes/levels/sfx/8 Bit jingle (27).ogg" id="11_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://bi7exvdcr51bp" path="res://assets/sprites/cartel_rotiseria.png" id="12_b8j7q"]
 [ext_resource type="AudioStream" uid="uid://bc6s7xljylou0" path="res://scenes/levels/sfx/la_milonga_de_argy.mp3" id="12_xfk5q"]
+[ext_resource type="Texture2D" uid="uid://clnptsvebuy8w" path="res://assets/sprites/lustrador.png" id="13_b8j7q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bovvr"]
 texture = ExtResource("1_377w7")
@@ -1706,7 +1707,8 @@ _name_item = "mate"
 [node name="Shoes" type="Node2D" parent="Collects"]
 
 [node name="Item" parent="Collects/Shoes" instance=ExtResource("5_urvlt")]
-position = Vector2(1320.0002, -479.99982)
+position = Vector2(9760, -199.99982)
+scale = Vector2(1.5, 1.5)
 _item_sprite = ExtResource("7_5mi6g")
 _name_item = "shoe"
 
@@ -1742,6 +1744,12 @@ frame = 1
 position = Vector2(2272, 72)
 scale = Vector2(0.11547694, 0.100787416)
 texture = ExtResource("12_b8j7q")
+
+[node name="Lustrador" type="Sprite2D" parent="Carteles"]
+position = Vector2(3073.9998, 272)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("13_b8j7q")
+hframes = 2
 
 [node name="Rejas" type="TileMapLayer" parent="."]
 z_index = 1
