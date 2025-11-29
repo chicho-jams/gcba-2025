@@ -34,6 +34,7 @@ shape = SubResource("CapsuleShape2D_34m8l")
 debug_color = Color(0.9626047, 9.62615e-08, 0.5064098, 0.41960785)
 
 [node name="Interactable" parent="." instance=ExtResource("2_34m8l")]
+press_action = &"cargar agua caliente"
 
 [node name="CollisionShape2D" parent="Interactable/FocusArea" index="0"]
 position = Vector2(0, -22)

@@ -38,6 +38,19 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 player="Only the player here"
 
+[input]
+
+"cargar agua caliente"={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+action={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://interactables/vending_machine/vending_machine.dialogue", "res://interactables/dialogue/water_dispenser.dialogue", "res://interactables/dialogue/rotisserie.dialogue", "res://interactables/dialogue/shoeshiner.dialogue", "res://interactables/dialogue/bakery.dialogue", "res://interactables/dialogue/kiosk.dialogue", "res://interactables/dialogue/turntable.dialogue", "res://interactables/dialogue/grill_master.dialogue", "res://interactables/dialogue/pickup_soccer.dialogue", "res://interactables/dialogue/grandpa.dialogue")

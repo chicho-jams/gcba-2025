@@ -102,6 +102,8 @@ _data = {
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
+next_action = &"action"
+skip_action = &"action"
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
