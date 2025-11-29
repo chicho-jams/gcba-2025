@@ -1,12 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfb00kewkcu82"]
+[gd_scene load_steps=8 format=3 uid="uid://cfb00kewkcu82"]
 
 [ext_resource type="Script" uid="uid://dojkwevtx5qlp" path="res://interactables/item.gd" id="1_w0rwq"]
+[ext_resource type="AudioStream" uid="uid://cqo01lkx33jow" path="res://scenes/levels/sfx/pickup_coin_32.wav" id="2_awqkn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n86so"]
 radius = 69.99999
 
 [sub_resource type="Animation" id="Animation_18qbc"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_o4il5"]
 resource_name = "fade_out"
@@ -35,6 +48,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_awqkn")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_w0rwq"]
 resource_name = "loop_boing"
@@ -78,6 +106,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_o4il5")
 }
 autoplay = "loop_boing"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
