@@ -49,6 +49,10 @@ dialogue = ExtResource("4_1wc6o")
 dialogue_id = "start"
 type_blip = ExtResource("5_6eyjs")
 
+[node name="TypeBlip" parent="Interactable/Dialogue" index="0"]
+volume_db = -8.0
+
 [node name="InteractableUI" parent="Interactable" instance=ExtResource("5_1wc6o")]
 
 [editable path="Interactable"]
+[editable path="Interactable/Dialogue"]
