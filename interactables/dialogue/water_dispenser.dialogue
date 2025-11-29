@@ -2,6 +2,7 @@
 Arranca la ronda de mates, pero acordate ¡No digas “gracias”! a menos que no quieras más.
 ¡Termo listo, Metele con encontrar los mates!
 $> termo.visible = false
+$> mates.visible = true
 $> dialogue_id = "post_start"
 => END
 

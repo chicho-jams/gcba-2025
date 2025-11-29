@@ -1371,6 +1371,7 @@ position = Vector2(289, 281)
 
 [node name="Dialogue" parent="VendingMachine/Interactable" index="4"]
 context = {
+"mates": NodePath("../../../Collects/Mates"),
 "termo": NodePath("../../../Termo")
 }
 
@@ -1451,6 +1452,7 @@ position = Vector2(407.99997, 375.99997)
 scale = Vector2(0.2, 0.2)
 
 [node name="Mates" type="Node2D" parent="Collects"]
+visible = false
 
 [node name="Item" parent="Collects/Mates" instance=ExtResource("5_urvlt")]
 position = Vector2(40.000153, -119.99985)
@@ -1485,6 +1487,7 @@ tile_map_data = PackedByteArray("AAAAABsAAAAIAB8AAAAAABwAAAAIACAAAAABABsAAAAJAB8
 tile_set = SubResource("TileSet_b2cq8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
 top_level = true
 offset_right = 1920.0
