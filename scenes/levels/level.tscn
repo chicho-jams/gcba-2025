@@ -1592,6 +1592,7 @@ context = {
 }
 
 [node name="Graffittis" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Graffittis"]
@@ -1627,41 +1628,31 @@ texture = ExtResource("1_377w7")
 region_enabled = true
 region_rect = Rect2(532, 700, 26, 73)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(849, 410)
-
-[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(0, -53)
-texture = ExtResource("1_377w7")
-region_enabled = true
-region_rect = Rect2(15, 644, 97, 104)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3, -41.5)
-shape = SubResource("RectangleShape2D_xb4v1")
-debug_color = Color(0.95747155, 1.732707e-06, 0.53500366, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Neones"]
 position = Vector2(993, 66)
 texture = ExtResource("1_377w7")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(479, 608, 35, 65)
 
+[node name="Subte" type="StaticBody2D" parent="."]
+position = Vector2(849, 410)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Subte"]
+position = Vector2(0, -53)
+texture = ExtResource("1_377w7")
+region_enabled = true
+region_rect = Rect2(15, 644, 97, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Subte"]
+position = Vector2(3, -41.5)
+shape = SubResource("RectangleShape2D_xb4v1")
+debug_color = Color(0.95747155, 1.732707e-06, 0.53500366, 0.41960785)
+
 [node name="Termo" type="Sprite2D" parent="."]
 position = Vector2(256, 270)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_d4w6o")
-
-[node name="AguaCaliente" type="Sprite2D" parent="."]
-position = Vector2(352, 160.00002)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("7_mbbpy")
-
-[node name="AguaCaliente2" type="Sprite2D" parent="."]
-position = Vector2(2464, 160)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_icy5c")
 
 [node name="Collects" type="Node2D" parent="."]
 position = Vector2(407.99997, 375.99997)
@@ -1696,6 +1687,18 @@ _item_sprite = ExtResource("8_ouxo3")
 _name_item = "mate"
 
 [node name="Empanadas" type="Node2D" parent="Collects"]
+
+[node name="Carteles" type="Node2D" parent="."]
+
+[node name="AguaCaliente" type="Sprite2D" parent="Carteles"]
+position = Vector2(352, 160.00002)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_mbbpy")
+
+[node name="Panaderia" type="Sprite2D" parent="Carteles"]
+position = Vector2(2464, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_icy5c")
 
 [node name="Rejas" type="TileMapLayer" parent="."]
 z_index = 1
