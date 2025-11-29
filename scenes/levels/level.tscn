@@ -1,7 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://bjk8nqssohs52"]
 
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_377w7"]
-[ext_resource type="Script" uid="uid://c6tubtaog5trp" path="res://scenes/levels/game_manager.gd" id="1_ouxo3"]
 [ext_resource type="PackedScene" uid="uid://qbskbd3r14k5" path="res://player/player.tscn" id="2_bovvr"]
 [ext_resource type="PackedScene" uid="uid://v17qace638xj" path="res://interactables/vending_machine/vending_machine.tscn" id="3_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://cfb00kewkcu82" path="res://interactables/item.tscn" id="5_urvlt"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c8clx5cgxsju8" path="res://assets/sprites/mate.png" id="8_ouxo3"]
 [ext_resource type="Texture2D" uid="uid://b10hy2s6agmjn" path="res://scenes/ui/Background.jpg" id="10_rmjfq"]
 [ext_resource type="AudioStream" uid="uid://jkk4qgmyrxoy" path="res://scenes/levels/sfx/busy city intersection.wav" id="11_7pb6i"]
+[ext_resource type="AudioStream" uid="uid://di33ap4j1wq0c" path="res://scenes/levels/sfx/8 Bit jingle (27).ogg" id="11_xfk5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bovvr"]
 texture = ExtResource("1_377w7")
@@ -1536,9 +1536,6 @@ _data = {
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 
-[node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_ouxo3")
-
 [node name="Tilemap" type="Node2D" parent="."]
 
 [node name="Background" type="TileMapLayer" parent="Tilemap"]
@@ -1785,6 +1782,9 @@ stream = ExtResource("11_7pb6i")
 volume_db = -12.0
 autoplay = true
 bus = &"SFX"
+
+[node name="MatesEncontrados" type="AudioStreamPlayer" parent="." groups=["mates_fanfare"]]
+stream = ExtResource("11_xfk5q")
 
 [editable path="VendingMachine"]
 [editable path="VendingMachine/Interactable"]

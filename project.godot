@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 [global_group]
 
 player="Only the player here"
+mates_fanfare=""
 
 [input]
 

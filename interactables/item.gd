@@ -27,6 +27,8 @@ func _verify_collection(name_item: String) -> void:
 			GameManager.medialuna_count += 1
 			if GameManager.medialuna_count == 5:
 				print("Cantidad de mates completados")
+				await get_tree().create_timer(.29).timeout
+				get_tree().get_nodes_in_group("mates_fanfare")[0].play()
 			print("Mate:", GameManager.medialuna_count)
 		"shoe":
 			GameManager.medialuna_count += 1
