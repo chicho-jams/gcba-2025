@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crsqdjuyc8kyg"
-path="res://.godot/imported/zapatosde mateo + rojo_s.png-a3f5ac0c2ef9056d38518b5520c5c554.ctex"
+path="res://.godot/imported/zapato.png-6fb51098d295c54bdd1fa1356ee9c2b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/zapatosde mateo + rojo_s.png"
-dest_files=["res://.godot/imported/zapatosde mateo + rojo_s.png-a3f5ac0c2ef9056d38518b5520c5c554.ctex"]
+source_file="res://assets/sprites/zapato.png"
+dest_files=["res://.godot/imported/zapato.png-6fb51098d295c54bdd1fa1356ee9c2b7.ctex"]
 
 [params]
 

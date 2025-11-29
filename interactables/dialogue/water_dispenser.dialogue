@@ -1,11 +1,11 @@
 ~ start/pressed
-Arranca la ronda de mates, pero acordate ¡No digas “gracias”! a menos que no quieras más.
-¡Termo listo, Metele con encontrar los mates!
+¡Arranca la ronda de mates! Pero acordate, no digas “gracias”, a menos que no quieras más.
+¡Termo listo! Metele con encontrar los mates.
 $> termo.visible = false
 $> mates.visible = true
 $> dialogue_id = "post_start"
 => END
 
 ~ post_start/pressed
-Ya agarraste el termo amigo, ahora anda a cebarte unos verdes
+Ya agarraste el termo amigo, ahora anda a cebarte unos verdes con Mateo.
 => END!

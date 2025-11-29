@@ -9,7 +9,7 @@ extends Area2D
 		#if has_node("CollisionShape2D"):
 			#$CollisionShape2D.shape = v
 
-@export_enum("mate", "medialuna", "empanada")
+@export_enum("mate", "medialuna", "empanada", "shoe")
 
 var _name_item: String
 
