@@ -1,5 +1,6 @@
 extends Node
 
+var mate_count: int = 0
 var medialuna_count: int = 0
 var empanada_count: int = 0
 

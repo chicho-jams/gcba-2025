@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c0aiy2pb6o6kc"
+path="res://.godot/imported/tasks_completed.dialogue-facb0d6322c9cdb4e65fc2bbade9ea21.tres"
+
+[deps]
+
+source_file="res://interactables/dialogue/tasks_completed.dialogue"
+dest_files=["res://.godot/imported/tasks_completed.dialogue-facb0d6322c9cdb4e65fc2bbade9ea21.tres"]
+
+[params]
+
+defaults=true

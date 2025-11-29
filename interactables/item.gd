@@ -26,10 +26,15 @@ func _verify_collection(name_item: String) -> void:
 		"mate":
 			GameManager.medialuna_count += 1
 			if GameManager.medialuna_count == 5:
-				print("Cantidad de mates completados")
+				var player = get_tree().get_nodes_in_group("player")[0]
+				player.set_locked(true)
 				await get_tree().create_timer(.29).timeout
 				get_tree().get_nodes_in_group("mates_fanfare")[0].play()
-			print("Mate:", GameManager.medialuna_count)
+				var balloon = DialogueManager.show_dialogue_balloon(
+				preload("res://interactables/dialogue/tasks_completed.dialogue"),
+				"mate_completed")
+				await DialogueManager.dialogue_ended
+				player.set_locked(false)
 		"shoe":
 			GameManager.medialuna_count += 1
 			if GameManager.medialuna_count == 5:
