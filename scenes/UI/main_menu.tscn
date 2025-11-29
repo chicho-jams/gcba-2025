@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmh3qg73asrcu"]
+[gd_scene load_steps=25 format=3 uid="uid://bmh3qg73asrcu"]
 
 [ext_resource type="FontFile" uid="uid://csfknem0amrp0" path="res://assets/fonts/Orbitron-Regular.ttf" id="1_1g8jr"]
 [ext_resource type="Script" uid="uid://ck6e6v2y2kygn" path="res://scenes/ui/main_menu.gd" id="1_qwnig"]
 [ext_resource type="Texture2D" uid="uid://c2x1e4pvdpjo" path="res://scenes/ui/main_menu_argy.png" id="3_uhagc"]
 [ext_resource type="Texture2D" uid="uid://ddmoe3m0f1aoe" path="res://assets/sprites/ARGY_titule_s.png" id="4_btxxm"]
+[ext_resource type="Texture2D" uid="uid://dr2rdqsg6rk8s" path="res://scenes/ui/menu_main.png" id="5_uhagc"]
 [ext_resource type="AudioStream" uid="uid://b1211744d1ux4" path="res://bgm/main_menu.mp3" id="5_x2yvf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwnig"]
@@ -86,6 +87,67 @@ _data = {
 &"fade_in": SubResource("Animation_x2yvf")
 }
 
+[sub_resource type="Animation" id="Animation_btxxm"]
+resource_name = "fade_in"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EffectFadeIn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EffectFadeIn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0049734083),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wb0q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EffectFadeIn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EffectFadeIn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wb0q5"]
+_data = {
+&"RESET": SubResource("Animation_wb0q5"),
+&"fade_in": SubResource("Animation_btxxm")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -95,6 +157,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_a1wsg")
 script = ExtResource("1_qwnig")
+
+[node name="EffectFadeIn" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0)
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uhagc")
+expand_mode = 1
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -193,12 +268,18 @@ stream = ExtResource("5_x2yvf")
 autoplay = true
 parameters/looping = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="ArgyAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_btxxm")
 }
 autoplay = "fade_in"
 
+[node name="MainMenuAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wb0q5")
+}
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="animation_finished" from="MainMenuAnimationPlayer" to="." method="_on_main_menu_animation_player_animation_finished"]
