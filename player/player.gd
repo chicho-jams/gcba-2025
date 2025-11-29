@@ -61,7 +61,6 @@ func update_focus(new_focus):
 
 func set_locked(_locked: bool):
 	locked = _locked
-
 	# remove ui focus if capturing mouse
 	if not locked and is_inside_tree():
 		var current_focus_control = _viewport.gui_get_focus_owner()

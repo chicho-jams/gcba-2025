@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
-
 @export var _item_sprite: Texture
+
 #@export var collision : Shape2D :
 	#set(v):
 		#collision = v
@@ -15,7 +15,6 @@ var _name_item: String
 
 func _ready() -> void:
 	_changue_item()
-
 	visibility_changed.connect(_on_visibility_changed)
 
 func _changue_item() -> void:
@@ -24,22 +23,14 @@ func _changue_item() -> void:
 func _verify_collection(name_item: String) -> void:
 	match name_item:
 		"mate":
-			GameManager.medialuna_count += 1
-			if GameManager.medialuna_count == 5:
-				var player = get_tree().get_nodes_in_group("player")[0]
-				player.set_locked(true)
-				await get_tree().create_timer(.29).timeout
-				get_tree().get_nodes_in_group("mates_fanfare")[0].play()
-				var balloon = DialogueManager.show_dialogue_balloon(
-				preload("res://interactables/dialogue/tasks_completed.dialogue"),
-				"mate_completed")
-				await DialogueManager.dialogue_ended
-				player.set_locked(false)
+			GameManager.mate_count += 1
+			if GameManager.mate_count == 5:
+				GameManager.taks_completd()
 		"shoe":
 			GameManager.medialuna_count += 1
-			if GameManager.medialuna_count == 5:
-				print("Cantidad de medialunas completadas")
-			print("Medialuna:", GameManager.medialuna_count)
+			if GameManager.medialuna_count == 1:
+				print("Cantidad de zapatos completadas")
+			print("shoe:", GameManager.medialuna_count)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	queue_free()
