@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmh3qg73asrcu"]
+[gd_scene load_steps=27 format=3 uid="uid://bmh3qg73asrcu"]
 
 [ext_resource type="FontFile" uid="uid://csfknem0amrp0" path="res://assets/fonts/Orbitron-Regular.ttf" id="1_1g8jr"]
 [ext_resource type="Script" uid="uid://ck6e6v2y2kygn" path="res://scenes/ui/main_menu.gd" id="1_qwnig"]
@@ -47,6 +47,12 @@ Button/styles/normal = SubResource("StyleBoxEmpty_5d4ag")
 Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_um6dh")
 Button/styles/pressed = SubResource("StyleBoxEmpty_mf7fl")
 Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_d6l81")
+
+[sub_resource type="InputEventAction" id="InputEventAction_uhagc"]
+action = &"action"
+
+[sub_resource type="Shortcut" id="Shortcut_btxxm"]
+events = [SubResource("InputEventAction_uhagc")]
 
 [sub_resource type="Animation" id="Animation_x2yvf"]
 resource_name = "fade_in"
@@ -265,6 +271,7 @@ focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../QuitButton")
+shortcut = SubResource("Shortcut_btxxm")
 text = "Empezar"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonVBox"]
