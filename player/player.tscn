@@ -440,6 +440,7 @@ blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_wodsf")
 blend_point_3/pos = Vector2(0, -1)
 snap = Vector2(1, 1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e7oew"]
 advance_mode = 2
