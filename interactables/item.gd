@@ -16,6 +16,8 @@ var _name_item: String
 func _ready() -> void:
 	_changue_item()
 
+	visibility_changed.connect(_on_visibility_changed)
+
 func _changue_item() -> void:
 	$Sprite2D.texture = _item_sprite
 
@@ -40,3 +42,7 @@ func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, 
 	if area.get_parent() is Player:
 		_verify_collection(_name_item)
 		_animation_player.play("fade_out")
+
+
+func _on_visibility_changed():
+	$CollisionShape2D.disabled = !is_visible_in_tree()

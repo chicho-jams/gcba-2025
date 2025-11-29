@@ -88,9 +88,6 @@ func interact_with_dialogue(state: String):
 							"player": player,
 						},
 						_interactable_zone,
-						#{
-							#"change_scene": get_tree().switch_scene_to_file
-						#},
 					]
 				)
 
