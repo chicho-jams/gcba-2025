@@ -55,7 +55,7 @@ action={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://interactables/vending_machine/vending_machine.dialogue", "res://interactables/dialogue/water_dispenser.dialogue", "res://interactables/dialogue/rotisserie.dialogue", "res://interactables/dialogue/shoeshiner.dialogue", "res://interactables/dialogue/bakery.dialogue", "res://interactables/dialogue/kiosk.dialogue", "res://interactables/dialogue/turntable.dialogue", "res://interactables/dialogue/grill_master.dialogue", "res://interactables/dialogue/pickup_soccer.dialogue", "res://interactables/dialogue/grandpa.dialogue")
+locale/translations_pot_files=PackedStringArray("res://interactables/vending_machine/vending_machine.dialogue", "res://interactables/dialogue/water_dispenser.dialogue", "res://interactables/dialogue/rotisserie.dialogue", "res://interactables/dialogue/shoeshiner.dialogue", "res://interactables/dialogue/bakery.dialogue", "res://interactables/dialogue/kiosk.dialogue", "res://interactables/dialogue/turntable.dialogue", "res://interactables/dialogue/grill_master.dialogue", "res://interactables/dialogue/pickup_soccer.dialogue", "res://interactables/dialogue/grandpa.dialogue", "res://interactables/dialogue/intro.dialogue")
 
 [rendering]
 
