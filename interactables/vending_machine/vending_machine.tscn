@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://v17qace638xj"]
+[gd_scene load_steps=10 format=3 uid="uid://v17qace638xj"]
 
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_mhcxl"]
 [ext_resource type="PackedScene" uid="uid://bjdiwr3k775v7" path="res://interactables/base/interactable.tscn" id="2_34m8l"]
 [ext_resource type="PackedScene" uid="uid://c41g4xatp22h" path="res://interactables/dialogue/dialogue.tscn" id="3_ve5ur"]
 [ext_resource type="Resource" uid="uid://bih5eaxln05" path="res://interactables/dialogue/water_dispenser.dialogue" id="4_1wc6o"]
 [ext_resource type="PackedScene" uid="uid://dmrarp7w18mw0" path="res://interactables/ui/interactable_ui.tscn" id="5_1wc6o"]
+[ext_resource type="AudioStream" uid="uid://b0kd8muywqcsa" path="res://interactables/vending_machine/static_6a.wav" id="5_6eyjs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34m8l"]
 radius = 7.0
@@ -46,6 +47,7 @@ shape = SubResource("CapsuleShape2D_ve5ur")
 [node name="Dialogue" parent="Interactable" instance=ExtResource("3_ve5ur")]
 dialogue = ExtResource("4_1wc6o")
 dialogue_id = "start"
+type_blip = ExtResource("5_6eyjs")
 
 [node name="InteractableUI" parent="Interactable" instance=ExtResource("5_1wc6o")]
 

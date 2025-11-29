@@ -6,3 +6,4 @@
 script = ExtResource("1_wgt8b")
 
 [node name="TypeBlip" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
