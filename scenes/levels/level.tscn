@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bjk8nqssohs52"]
+[gd_scene load_steps=32 format=4 uid="uid://bjk8nqssohs52"]
 
 [ext_resource type="Texture2D" uid="uid://cuulvxsjfeemx" path="res://base_tilemap/Cyberpunk City Atlas.png" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://qbskbd3r14k5" path="res://player/player.tscn" id="2_bovvr"]
@@ -1283,10 +1283,40 @@ size = Vector2(92, 83)
 
 [sub_resource type="Animation" id="Animation_8iyoh"]
 resource_name = "loop_light"
+length = 4.0
+loop_mode = 1
 step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AguaCaliente:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.0666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.012617188, 0.012617188, 0.012617188, 1), Color(1.6303829, 1.6303829, 1.6303829, 1), Color(0.012617188, 0.012617188, 0.012617188, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b8j7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AguaCaliente:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mq31s"]
 _data = {
+&"RESET": SubResource("Animation_b8j7q"),
 &"loop_light": SubResource("Animation_8iyoh")
 }
 
@@ -1719,10 +1749,11 @@ position = Vector2(352, 160.00002)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("7_mbbpy")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Carteles"]
+[node name="HotWaterAnimationPlayer" type="AnimationPlayer" parent="Carteles"]
 libraries = {
 &"": SubResource("AnimationLibrary_mq31s")
 }
+autoplay = "loop_light"
 
 [node name="CartelkioscoS" type="Sprite2D" parent="Carteles"]
 position = Vector2(784, 88)
